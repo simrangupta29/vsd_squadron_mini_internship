@@ -7,3 +7,4 @@ $git clone -- recursive https://github.com/riscv/riscv-gnu-toolchain
 $./configure --prefix=/opt/riscv
 $ make linux
 $ sudo make linux
+![intern_riscv](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/7d2eaa54-2462-409f-bdb3-bd7f29dfc1f4)
