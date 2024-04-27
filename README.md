@@ -132,7 +132,6 @@ jal saves PC+4 in register rd (the return address)<br>
 |  INST TYPE  | [12:31]                | [7-11 ]    | [0-6]    |
 |  U-TYPE   | imm[12:31]                | rd    | opcode    |
 
-</br>
 This instruction should deal with:</br>
  a destination register to put the 20 bits into</br>
 the immediate of 20 bits</br>
