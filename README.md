@@ -72,8 +72,15 @@ sign extended to form a 32-bit operand.</br>
 |INSTRUCTION TYPE     |        [20-31]         | [15-19]     |  [12-14]    | [7-11]     | [0-6]     |
 | Immediates     | imm[11:0]                | rs1      | function3     | rd     | opcode     |
 
-
-3.<b>S-type (Store)</b> instructions are exclusively used for storing contents of a 
+</br>
+ opcode (7): uniquely specifies the instruction</br>
+ rs1 (5): specifies a register operand</br>
+ rd (5): specifies destination register that receives result of computation</br>
+ immediate (12): 12 bit number– All computations done in words, so 12-bit immediate must be extended to 32 bits</br>
+                              – always sign-extended to 32-bits before use in an arithmetic operation</br>
+ imm[11:0] can hold values in range [-211 , +211)</br>
+ 
+ 3.<b>S-type (Store)</b> instructions are exclusively used for storing contents of a 
 register to data memory. </br>
 
 | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 |
@@ -81,6 +88,11 @@ register to data memory. </br>
 | INSTRUCTION TYPE   |     [25-31]           |  [20-24]  | [15-19]    | [12-14] | [7-11]  | [0-6]     |
 | Register  |  imm[11:5]      | rs2     | rs1   | function3     |   imm[4:0]      |  opcode    |
 
+</br>
+Store needs to read two registers, rs1 for base memory address, and rs2 for data to be stored, as well as need immediate offset.</br>
+ Can’t have both rs2 and immediate in same place as other instructions.</br>
+ Note: stores don’t write a value to the register file, no rd!</br>
+ RISC-V design decision is move low 5 bits of immediate to where rd field was in other instructions – keep rs1/rs2 fields in same place</br>
 
 
 4.<b>B-type (Branch)</b> instructions are used to control program flow. It compares 
@@ -92,7 +104,13 @@ to the current Program Counter value. </br>
 | INSTRUCTION TYPE   |     [25-31]           |  [20-24]  | [15-19]    | [12-14] | [7-11]  | [0-6]     |
 | Register  |  imm[12] , imm[10:5]      | rs2     | rs1   | function3     |    imm[4:0] ,imm[11]    |  opcode    |
 
-
+</br>
+B-format is mostly same as S-Format, with two register sources (rs1/rs2) and a 12-bit immediate</br>
+The 12 immediate bits encode even 13-bit signed byte offsets (lowest bit of offset is always zero, so no need to store it</br>
+It checks the condition between Rs1 and Rs2,if condition is true:</br>
+pc=pc+immediate value(incrementing the pc) and jump to next address based on offset value</br>
+if condition is false:</br>
+pc=pc+4(which execute next input)</br>
 
 5.<b>J-type (Jump)</b> instructions are used for subroutine calls.</br>
 
@@ -101,7 +119,11 @@ to the current Program Counter value. </br>
 |  INST TYPE  | [20-31]               |   [12-19]           |   [7-11]    | [0-6]    |
 | U-TYPE    |      imm[20] , imm[10:1] ,imm[11]      |  imm[19:12]            | rd     | Opcode     |
 
-
+</br>
+The J-type instruction has instruction like JAL.It encodes 20 bits signed immediate</br>
+The address of the desired memory location for jump is defined in the instruction.</br> 
+jal saves PC+4 in register rd (the return address)<br>
+ Set PC = PC + offset (PC-relative jump<br>
 
 6 <b>U-type (Upper immediate)<b> instructions are used to specify the upper 20 bits immediate value of a register</br>
 
@@ -110,12 +132,132 @@ to the current Program Counter value. </br>
 |  INST TYPE  | [12:31]                | [7-11 ]    | [0-6]    |
 |  U-TYPE   | imm[12:31]                | rd    | opcode    |
 
+</br>
+This instruction should deal with:</br>
+ a destination register to put the 20 bits into</br>
+the immediate of 20 bits</br>
+ the instruction opcode</br>
+One destination register, rd</br>
+ Used for two instructions</br>
+ LUI – Load Upper Immediate</br>
+AUIPC – Add Upper Immediate to PC</br>
+
+# ANALYSING OF SOME OF INSTRUCTIONS WITH MACHINE CODE
+1.<b>add r6,r2,r1</b>---It is R-type instruction.ADD is a typical ALU instruction in the class of 
+arithmatic and logic operations. It needs two source operands and one destination 
+operands to store the results.</br>
+rs1=r2=00010,rs2=r1 = 00001</br>
+rd: =r6=r1+r2= 00110</br>
+The operation is specified with the opcode, funct3 and funct7 fields of the instructions.</br> 
+opcode =0110011 funct3 = 000, funct7 = 0000000</br>
+32 bit instruction(funct7 rs2 rs1 fun3 rd opcode )</br>
+0000000 00001 00010 000 00110 0110011</br>
+
+2.<b>SUB r7, r1, r2</b>---It is R-type instruction.SUB is a typical ALU instruction in the class of 
+arithmatic and logic operations. It needs two source operands and one destination 
+operands to store the results.</br>
+rs1=r1=00001,rs2=r2 = 00010</br>
+rd: =r7=rs1-rs2= 00111</br>
+The operation is specified with the opcode, funct3 and funct7 fields of the instructions. </br>
+opcode =0110011 funct3 = 000, funct7 =  0100000</br>
+32 bit instruction(funct7 rs2 rs1 fun3 rd opcode )</br>
+0000000 00010 00001 000 00111  0100000</br>
 
 
+3.<b>AND r8, r1, r3</b>- this instruction belongs to R-type instruction set.
+r8 will hold the value of r1 & r3, having bitwise and
+rd = r8 = 01000
+rs1 = r1 = 00001
+rs2 = r3 = 00011
+The operation is specified with the opcode, funct3 and funct7 fields of the instructions. </br>
+Opcode for AND = 0110011,func3 = 111,func7 = 0000000
+32 bits instruction :
+0000000 00011 00001 111 01000 0110011
 
+4.<b>OR r9,r2,r5</b>
+It is also an R-type instruction.
+rd = r9=01001
+rs1 = r2=00010 ,rs2= r5:00101 
+funct3 = 110 ,funct7 = 0000000 ,opcode: 0110011
+The operation is specified with the opcode, funct3 and funct7 fields of the instructions. </br>
+32 bits instruction :
+0000000 00101 00010 110 01001 0110011
 
+5.<b> XOR r10, r1, r4</b>
+It is R-type instruction set.
+XOR operation bit by bit.
+rd = r10 = 01010
+rs1 = r1 = 00001
+rs2 = r4 = 00100
+func3 = 100,func7 = 0000000,Opcode for XOR = 0110011
+The operation is specified with the opcode, funct3 and funct7 fields of the instructions. </br>
+32 bits instruction :
+0000000 00100 00001 100 01010 0110011
 
+6.<b>SLT r1, r2, r4</b>
+It is R-type instruction set.
+rd = r1 = 00001
+rs1 = r2 = 00010
+rs2 = r4 = 00100
+func3 = 010,func7 = 0000000,Opcode for SLT = 0110011
+The operation is specified with the opcode, funct3 and funct7 fields of the instructions. </br>
+32 bits instruction :
+0000000 00100 00010 010 00001 0110011
 
+7.<b>ADDI r12, r4, 5</b>
+It is I-type instruction set.
+rd = r12 =r4+5= 01100
+rs1 = r4 = 00100
+imm[11:0] = 5 = 000000000101
+func3 = 000, Opcode for ADDI = 0010011
+32 bits instruction :
+000000000000101 00100 000 01100 0010011
 
+8.<b>SW r3, r1, 2</b>
+It is S-type instruction set.
+r3 is the source register. 
+rs2 = r3 = 00011
+rs1 = r1 = 00001
+imm[11:0] = 2 = 000000000010
+func3 = 010,Opcode for SW = 0100011
+32 bits instruction : 
+0000000 00011 00001 010 00010 0100011
 
+9.<b>SRL r16, r14, r2</b>
+SRL stands for Logical Shift Right.It is S-type instruction set.
+r16 is the destination register
+rd = r16 = 10000
+rs1 = r14 = 01110
+rs2 = r2 = 00010
+func3 = 101,func7 = 0000000,Opcode for SRL = 0110011
+32 bits instruction : 0000000 00010 01110 101 10000 0110011
 
+10.<b>BNE r0, r1, 20</b>
+BNE is a B-type instruction . In BNE, the value stored in r0 !=  the value stored in r1.
+If the condition is true, PC = PC + 20, elsePC= PC + 4 
+rs1 = r0 = 00000
+rs2 = r1 = 00001
+imm[12:1] = 20 = 000000010100
+func3 = 001,Opcode for BNE = 1100011
+32 bits instruction :
+0 000001 00001 00000 001 0100 0 1100011
+
+11.<b>BEQ r0, r0, 15</b>
+BEQ is a B-type instruction. In BEQ,the value stored in r0 == the value stored in r0. 
+If the condition is true, PC= PC + 15, else PC=PC+4
+rs1 = r0 = 00000
+rs2 = r0 = 00000
+Imm[12:1] = 000000001111
+func3 = 000,Opcode for BEQ = 1100011
+32 bits instruction :
+0 000000 00000 00000 000 1111 0 1100011
+
+12.<b>LW r13,r1,2</b>
+It is I-type instruction set.
+The "lw" (load word) instruction is used to load a word from memory into a register. 
+rd =r13=01101
+rs1 = r1=00001
+imm[11:0]= 2 =000000000010 
+funct3 = 010, opcode for lw= 0000011 
+32 bit instruction:
+000000000010 00001  010 01101  0000011 
