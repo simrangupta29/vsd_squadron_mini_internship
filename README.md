@@ -45,7 +45,8 @@ means the instruction must use 3 x 5-bit = 15 bit of the 32-bit instruction.</br
 2.<b>MEMORY</b>-the instruction must specify the data memory address, using a register as a pointer</br>
 3.<b>CONSTANTS(IMMEDIATES)</b>-The third is from instruction memory, i.e. the operand is a constant within  the instruction itself. this is also called an immediate.</br>
 </br>
-The format of the instructions are divided into only six different types</br>
+<b>The format of the instructions are divided into only six different types</b></br>
+</br>
 1.<b>R-type (Register/register)</b> instructions use only registers as source and 
 destiantions. This instruction type is mostly used for arithmetic and logic 
 operations involving the ALU.</br>
@@ -61,8 +62,9 @@ rs1 (5): 1st operand (“source register 1”) </br>
  rs2 (5): 2nd operand (second source register) </br>
  rd (5): “destination register” — receives the result of computation </br>
  We know that RISCV has 32 registers </br> A 5 bit field can represent exactly 25 = 32 things  </br>
-(interpret as the register numbers x0-x31)
+(interpret as the register numbers x0-x31)</br>
 </br>
+
 2.<b>I-type (Immediate)</b> instructions has one of the two source operands specified 
 within the 32-bit instruction word as a 12-bit constant (or immediate). This 
 constant is regards as 12-bit signed 2’s complement number, which is always 
