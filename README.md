@@ -48,83 +48,25 @@ means the instruction must use 3 x 5-bit = 15 bit of the 32-bit instruction.</br
 The format of the instructions are divided into only six different types</br>
 1.<b>R-type (Register/register)</b> instructions use only registers as source and 
 destiantions. This instruction type is mostly used for arithmetic and logic 
-operations involving the ALU.
+operations involving the ALU.</br>
 2.<b>I-type (Immediate)</b> instructions has one of the two source operands specified 
 within the 32-bit instruction word as a 12-bit constant (or immediate). This 
 constant is regards as 12-bit signed 2’s complement number, which is always 
-sign extended to form a 32-bit operand.
+sign extended to form a 32-bit operand.</br>
 3.<b>S-type (Store)</b> instructions are exclusively used for storing contents of a 
-register to data memory. 
+register to data memory. </br>
 4.<b>B-type (Branch)</b> instructions are used to control program flow. It compares 
 two operands stored in registers and branch to a destination address relative 
-to the current Program Counter value. 
-5.<b>J-type (Jump)</b> instructions are used for subroutine calls.
-6 <b>U-type (Upper immediate)<b> instructions are used to specify the upper 20 bits immediate value of a register
-Colons can be used to align columns.
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the 
-raw Markdown line up prettily. You can also use inline Markdown.
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-<style>
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 8px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  th {
-    background-color: #f2f2f2;
-  }
-  /* Specify column widths */
-  .col1 {
-    width: 20%;
-  }
-  .col2 {
-    width: 30%;
-  }
-  .col3 { }
-</style>
-</head>
-<body>
-
-<h2>GitHub Readme Table Example</h2>
-
-<table>
-  <tr>
-    <th class="col1">Header 1</th>
-    <th class="col2">Header 2</th>
-    <th class="col3">Header 3</th>
-  </tr>
-  <tr>
-    <td>Row 1, Column 1</td>
-    <td>Row 1, Column 2</td>
-    <td>Row 1, Column 3</td>
-  </tr>
-  <tr>
-    <td>Row 2, Column 1</td>
-    <td>Row 2, Column 2</td>
-    <td>Row 2, Column 3</td>
-  </tr>
-<tr>
-    <td>Row 3, Column 1</td>
-    <td>Row 3, Column 2</td>
-    <td>Row 3, Column 3</td>
-  </tr>
-</table>
+to the current Program Counter value. </br>
+5.<b>J-type (Jump)</b> instructions are used for subroutine calls.</br>
+6 <b>U-type (Upper immediate)<b> instructions are used to specify the upper 20 bits immediate value of a register</br>
 
 
-    width: 50%;
+| INSTRUCTION TYPE|    [25-31]      | [20-24]   |[15-19]|   | [12-14] |  [7-11]   |  [0-6]          |
+| ----------------|:---------------:| :--------:|:---------:|:-------:|:---------:|:---------------:|
+| REGISTER  | funct7| rs2 | rs1 |funct3 |  rd |   opcode |
+
+
+
+
+
