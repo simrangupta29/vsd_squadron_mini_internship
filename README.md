@@ -54,6 +54,14 @@ operations involving the ALU.</br>
 | INSTRUCTION TYPE   |     [25-31]           |  [20-24]  | [15-19]    | [12-14] | [7-11]  | [0-6]     |
 | Register  | function7     | rs2     | rs1   | function3     |   rd     |  opcode    |
 
+</br>
+ opcode (7): partially specifies operation.e.g. R-types have opcode = 0b0110011 </br>
+funct7+funct3 (10): combined with opcode, these two fields describe what operation to perform </br>
+rs1 (5): 1st operand (“source register 1”) </br>
+ rs2 (5): 2nd operand (second source register) </br>
+ rd (5): “destination register” — receives the result of computation </br>
+ We know that RISCV has 32 registers </br> A 5 bit field can represent exactly 25 = 32 things  </br>
+(interpret as the register numbers x0-x31)
 
 2.<b>I-type (Immediate)</b> instructions has one of the two source operands specified 
 within the 32-bit instruction word as a 12-bit constant (or immediate). This 
