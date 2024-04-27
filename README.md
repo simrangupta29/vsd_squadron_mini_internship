@@ -1,4 +1,6 @@
-# vsd_squadron_mini_internship 
+# vsd_squadron_mini_internship
+Mini summer internship under vlsi system design on riscv-architecture and about open source eda tools.
+# TASK-1
 First installed the oracle virtual machine<br />
 The next step was to download ubuntu and open it into virtual box.<br />
 # RISCV-Toolchain
@@ -29,7 +31,35 @@ $sudo apt-get install iverilog<br />
 $sudo apt update<br />
 $sudo apt install gtkwave<br />
 ![intern_gitkware](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/533e8301-6589-47dc-a309-4882c1bc80af)
-TASK-2
+# TASK-2
+# ABOUT RISC-V
+RISC-V is an open, versatile instruction-set architecture supporting diverse implementations. </br>
+RISC-V is the first widely accepted open-source RISC processor </br>.
+It features a base integer ISA, optional extensions, 32/64-bit variants, IEEE-754 floating-point support, and facilitates experimentation with privileged architectures, hypervisors, and parallel computing.
+# INSTRUCTION SET IN RISCV
+The RISC-V instruction set is known as RV32I (RISC-V 32-bit integer only) only has 40 instructions. The ISA ( instruction set architecure ) has two sources and one 
+destination operands.</br>
+# RISCV OPERANDS LOCATION
+1.REGISTER-The fastest and most often used operand is from or to registers on the CPU chip itself. RISC-V RV32I has 32 32-bit registers. 32 registers 
+means the instruction must use 3 x 5-bit = 15 bit of the 32-bit instruction.</br>
+2.MEMORY-the instruction must specify the data memory address, using a register as a pointer</br>
+3.CONSTANTS(IMMEDIATES)-The third is from instruction memory, i.e. the operand is a constant within  the instruction itself. this is also called an immediate.</br>
+</br>
+The format of the instructions are divided into only six different types</br>
+1.<b>R-type (Register/register)</b> instructions use only registers as source and 
+destiantions. This instruction type is mostly used for arithmetic and logic 
+operations involving the ALU.
+2.<b>I-type (Immediate)</b> instructions has one of the two source operands specified 
+within the 32-bit instruction word as a 12-bit constant (or immediate). This 
+constant is regards as 12-bit signed 2’s complement number, which is always 
+sign extended to form a 32-bit operand.
+3.<b>S-type (Store)</b> instructions are exclusively used for storing contents of a 
+register to data memory. 
+4.<b>B-type (Branch)</b> instructions are used to control program flow. It compares 
+two operands stored in registers and branch to a destination address relative 
+to the current Program Counter value. 
+5.<b>J-type (Jump)</b> instructions are used for subroutine calls.
+6 <b>U-type (Upper immediate)<b> instructions are used to specify the upper 20 bits immediate value of a register
 Colons can be used to align columns.
 
 | Tables        | Are           | Cool  |
@@ -46,3 +76,55 @@ Markdown | Less | Pretty
 --- | --- | ---
 *Still* | `renders` | **nicely**
 1 | 2 | 3
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  /* Specify column widths */
+  .col1 {
+    width: 20%;
+  }
+  .col2 {
+    width: 30%;
+  }
+  .col3 { }
+</style>
+</head>
+<body>
+
+<h2>GitHub Readme Table Example</h2>
+
+<table>
+  <tr>
+    <th class="col1">Header 1</th>
+    <th class="col2">Header 2</th>
+    <th class="col3">Header 3</th>
+  </tr>
+  <tr>
+    <td>Row 1, Column 1</td>
+    <td>Row 1, Column 2</td>
+    <td>Row 1, Column 3</td>
+  </tr>
+  <tr>
+    <td>Row 2, Column 1</td>
+    <td>Row 2, Column 2</td>
+    <td>Row 2, Column 3</td>
+  </tr>
+<tr>
+    <td>Row 3, Column 1</td>
+    <td>Row 3, Column 2</td>
+    <td>Row 3, Column 3</td>
+  </tr>
+</table>
+
+
+    width: 50%;
