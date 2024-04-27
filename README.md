@@ -34,16 +34,16 @@ $sudo apt install gtkwave<br />
 # TASK-2
 # ABOUT RISC-V
 RISC-V is an open, versatile instruction-set architecture supporting diverse implementations. </br>
-RISC-V is the first widely accepted open-source RISC processor </br>.
+RISC-V is the first widely accepted open-source RISC processor. </br>
 It features a base integer ISA, optional extensions, 32/64-bit variants, IEEE-754 floating-point support, and facilitates experimentation with privileged architectures, hypervisors, and parallel computing.
 # INSTRUCTION SET IN RISCV
 The RISC-V instruction set is known as RV32I (RISC-V 32-bit integer only) only has 40 instructions. The ISA ( instruction set architecure ) has two sources and one 
 destination operands.</br>
 # RISCV OPERANDS LOCATION
-1.REGISTER-The fastest and most often used operand is from or to registers on the CPU chip itself. RISC-V RV32I has 32 32-bit registers. 32 registers 
+1.<b>REGISTER</b>-The fastest and most often used operand is from or to registers on the CPU chip itself. RISC-V RV32I has 32 32-bit registers. 32 registers 
 means the instruction must use 3 x 5-bit = 15 bit of the 32-bit instruction.</br>
-2.MEMORY-the instruction must specify the data memory address, using a register as a pointer</br>
-3.CONSTANTS(IMMEDIATES)-The third is from instruction memory, i.e. the operand is a constant within  the instruction itself. this is also called an immediate.</br>
+2.<b>MEMORY</b>-the instruction must specify the data memory address, using a register as a pointer</br>
+3.<b>CONSTANTS(IMMEDIATES)</b>-The third is from instruction memory, i.e. the operand is a constant within  the instruction itself. this is also called an immediate.</br>
 </br>
 The format of the instructions are divided into only six different types</br>
 1.<b>R-type (Register/register)</b> instructions use only registers as source and 
@@ -62,7 +62,7 @@ rs1 (5): 1st operand (“source register 1”) </br>
  rd (5): “destination register” — receives the result of computation </br>
  We know that RISCV has 32 registers </br> A 5 bit field can represent exactly 25 = 32 things  </br>
 (interpret as the register numbers x0-x31)
-
+</br>
 2.<b>I-type (Immediate)</b> instructions has one of the two source operands specified 
 within the 32-bit instruction word as a 12-bit constant (or immediate). This 
 constant is regards as 12-bit signed 2’s complement number, which is always 
@@ -79,7 +79,7 @@ sign extended to form a 32-bit operand.</br>
  immediate (12): 12 bit number– All computations done in words, so 12-bit immediate must be extended to 32 bits</br>
                               – always sign-extended to 32-bits before use in an arithmetic operation</br>
  imm[11:0] can hold values in range [-211 , +211)</br>
- 
+ </br>
  3.<b>S-type (Store)</b> instructions are exclusively used for storing contents of a 
 register to data memory. </br>
 
@@ -93,7 +93,7 @@ Store needs to read two registers, rs1 for base memory address, and rs2 for data
  Can’t have both rs2 and immediate in same place as other instructions.</br>
  Note: stores don’t write a value to the register file, no rd!</br>
  RISC-V design decision is move low 5 bits of immediate to where rd field was in other instructions – keep rs1/rs2 fields in same place</br>
-
+</br>
 
 4.<b>B-type (Branch)</b> instructions are used to control program flow. It compares 
 two operands stored in registers and branch to a destination address relative 
@@ -111,7 +111,7 @@ It checks the condition between Rs1 and Rs2,if condition is true:</br>
 pc=pc+immediate value(incrementing the pc) and jump to next address based on offset value</br>
 if condition is false:</br>
 pc=pc+4(which execute next input)</br>
-
+</br>
 5.<b>J-type (Jump)</b> instructions are used for subroutine calls.</br>
 
 | Column 1 | Column 2          | Column 3          | Column 4 | Column 5 |
@@ -124,7 +124,7 @@ The J-type instruction has instruction like JAL.It encodes 20 bits signed immedi
 The address of the desired memory location for jump is defined in the instruction.</br> 
 jal saves PC+4 in register rd (the return address)<br>
  Set PC = PC + offset (PC-relative jump<br>
-
+</br>
 6 <b>U-type (Upper immediate)</b> instructions are used to specify the upper 20 bits immediate value of a register</br>
 
 | Column 1 | Column 2             | Column 3 | Column 4 |
@@ -139,9 +139,10 @@ This instruction should deal with:</br>
  Used for two instructions</br>
  LUI – Load Upper Immediate</br>
 AUIPC – Add Upper Immediate to PC</br>
-
+</br>
 # ANALYSING OF SOME OF INSTRUCTIONS WITH MACHINE CODE
-1.<b>add r6,r2,r1</b>---It is R-type instruction.ADD is a typical ALU instruction in the class of 
+1.<b>add r6,r2,r1</b></br>
+It is R-type instruction.ADD is a typical ALU instruction in the class of 
 arithmatic and logic operations. It needs two source operands and one destination operands to store the results.</br>
 rs1=r2=00010,rs2=r1 = 00001</br>
 rd: =r6=r1+r2= 00110</br>
@@ -150,7 +151,8 @@ opcode =0110011 funct3 = 000, funct7 = 0000000</br>
 32 bit instruction(funct7 rs2 rs1 fun3 rd opcode )</br>
 0000000 00001 00010 000 00110 0110011</br>
 
-2.<b>SUB r7, r1, r2</b>---It is R-type instruction.SUB is a typical ALU instruction in the class of 
+2.<b>SUB r7, r1, r2</b></br>
+It is R-type instruction.SUB is a typical ALU instruction in the class of 
 arithmatic and logic operations. It needs two source operands and one destination 
 operands to store the results.</br>
 rs1=r1=00001,rs2=r2 = 00010</br>
@@ -161,7 +163,8 @@ opcode =0110011 funct3 = 000, funct7 =  0100000</br>
 0000000 00010 00001 000 00111  0100000</br>
 
 
-3.<b>AND r8, r1, r3</b>- this instruction belongs to R-type instruction set.
+3.<b>AND r8, r1, r3</b></br>
+This instruction belongs to R-type instruction set.
 r8 will hold the value of r1 & r3, having bitwise and</br>
 rd = r8 = 01000</br>
 rs1 = r1 = 00001</br>
