@@ -49,19 +49,21 @@ The format of the instructions are divided into only six different types</br>
 1.<b>R-type (Register/register)</b> instructions use only registers as source and 
 destiantions. This instruction type is mostly used for arithmetic and logic 
 operations involving the ALU.</br>
-| Column 1 | Column 2           | Column 3 | Column 4 | Column 5 | Column 6 |
-|----------|--------------------|----------|----------|----------|----------|
-| INSTRUCTION TYPE   |      [20-31]                            |  [20-24]  | [15-19]    | [12-14] | [7-11]  | [0-6]     |
-| REGISTER           |        imm[0:11]                        | rs1   | function3     |   rd     |  opcode    |
+| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 |
+|----------|----------|----------|----------|----------|----------|----------|
+| INSTRUCTION TYPE   |     [25-31]           |  [20-24]  | [15-19]    | [12-14] | [7-11]  | [0-6]     |
+| Register  | function7     | rs2     | rs1   | function3     |   rd     |  opcode    |
+
 
 2.<b>I-type (Immediate)</b> instructions has one of the two source operands specified 
 within the 32-bit instruction word as a 12-bit constant (or immediate). This 
 constant is regards as 12-bit signed 2’s complement number, which is always 
 sign extended to form a 32-bit operand.</br>
-| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 |
-|----------|----------|----------|----------|----------|----------|----------|
-| INSTRUCTION TYPE   |     [25-31]           |  [20-24]  | [15-19]    | [12-14] | [7-11]  | [0-6]     |
-| Immediates  | function7     | rs2     | rs1   | function3     |   rd     |  opcode    |
+| Column 1 | Column 2            | Column 3 | Column 4 | Column 5 | Column 6 |
+|----------|---------------------|----------|----------|----------|----------|
+|INSTRUCTION TYPE     |        [20-31]         | [15-19]     |  [12-14]    | [7-11]     | [0-6]     |
+| Immediates     | function7                | rs1      | function3     | rd     | opcode     |
+
 
 3.<b>S-type (Store)</b> instructions are exclusively used for storing contents of a 
 register to data memory. </br>
