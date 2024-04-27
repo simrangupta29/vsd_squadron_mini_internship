@@ -87,6 +87,14 @@ to the current Program Counter value. </br>
 
 
 5.<b>J-type (Jump)</b> instructions are used for subroutine calls.</br>
+
+| Column 1 | Column 2          | Column 3          | Column 4 | Column 5 |
+|----------|-------------------|-------------------|----------|----------|
+|  INST TYPE  | [20-31]               |   [12-19]           |   [7-11]    | [0-6]    |
+| U-TYPE    |      imm[20] , imm[10:1] ,imm[11]      |  imm[19:12]            | rd     | Opcode     |
+
+
+
 6 <b>U-type (Upper immediate)<b> instructions are used to specify the upper 20 bits immediate value of a register</br>
 
 | Column 1 | Column 2             | Column 3 | Column 4 |
