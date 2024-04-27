@@ -49,6 +49,11 @@ The format of the instructions are divided into only six different types</br>
 1.<b>R-type (Register/register)</b> instructions use only registers as source and 
 destiantions. This instruction type is mostly used for arithmetic and logic 
 operations involving the ALU.</br>
+|  Intruction type | [24-31] | [20-24]| [15-19] | [24-31] |[12-14]|[7-11]   |
+|----------|----------|----------|----------|----------|----------|---------|-------|
+| Row 1    | Data     | Data     | Data     | Data     | Data     | Data     |
+| Row 2    | Data     | Data     | Data     | Data     | Data     | Data     |
+
 2.<b>I-type (Immediate)</b> instructions has one of the two source operands specified 
 within the 32-bit instruction word as a 12-bit constant (or immediate). This 
 constant is regards as 12-bit signed 2’s complement number, which is always 
@@ -62,9 +67,11 @@ to the current Program Counter value. </br>
 6 <b>U-type (Upper immediate)<b> instructions are used to specify the upper 20 bits immediate value of a register</br>
 
 
-| INSTRUCTION TYPE|    [25-31]      | [20-24]   |[15-19]|   | [12-14] |  [7-11]   |  [0-6]          |
-| ----------------|:---------------:| :--------:|:---------:|:-------:|:---------:|:---------------:|
-| REGISTER  | funct7| rs2 | rs1 |funct3 |  rd |   opcode |
+| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 |
+|----------|----------|----------|----------|----------|----------|----------|
+| Row 1    | Data     | Data     | Data     | Data     | Data     | Data     |
+| Row 2    | Data     | Data     | Data     | Data     | Data     | Data     |
+
 
 
 
