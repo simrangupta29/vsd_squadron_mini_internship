@@ -67,17 +67,25 @@ sign extended to form a 32-bit operand.</br>
 
 3.<b>S-type (Store)</b> instructions are exclusively used for storing contents of a 
 register to data memory. </br>
+
 | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 |
 |----------|----------|----------|----------|----------|----------|----------|
 | INSTRUCTION TYPE   |     [25-31]           |  [20-24]  | [15-19]    | [12-14] | [7-11]  | [0-6]     |
 | Register  |  imm[11:5]      | rs2     | rs1   | function3     |   imm[4:0]      |  opcode    |
+
+
+
 4.<b>B-type (Branch)</b> instructions are used to control program flow. It compares 
 two operands stored in registers and branch to a destination address relative 
 to the current Program Counter value. </br>
+
 | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 |
 |----------|----------|----------|----------|----------|----------|----------|
 | INSTRUCTION TYPE   |     [25-31]           |  [20-24]  | [15-19]    | [12-14] | [7-11]  | [0-6]     |
 | Register  |  imm[12] | imm[10:5]      | rs2     | rs1   | function3     |    imm[4:0] |imm[11]    |  opcode    |
+
+
+
 5.<b>J-type (Jump)</b> instructions are used for subroutine calls.</br>
 6 <b>U-type (Upper immediate)<b> instructions are used to specify the upper 20 bits immediate value of a register</br>
 
