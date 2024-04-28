@@ -1,5 +1,5 @@
 # VSD SQUADRON MINI INTERNSHIP
-Mini summer internship under VLSI SYSTEM DESIGN on Riscv-Architecture and about open source eda tools.
+Mini summer internship under VLSI SYSTEM DESIGN on RISCV-Architecture and about open source eda tools.
 </br>
 # TASK-1
 First installed the oracle virtual machine<br />
@@ -24,11 +24,11 @@ $ make config-gcc<br />
 $ make <br />
 $ sudo make install<br />
 ![intern_yosys](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/a562fb43-7d69-4e0c-b9c6-cd00f0c9dc0f)
-# verilog
+# VERILOG
 $sudo apt-get install iverilog<br />
 ![intern_verilog](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/99574331-89fb-4484-ae07-7ef634dfb823)
 
-# Gtkware
+# GTKWARE
 $sudo apt update<br />
 $sudo apt install gtkwave<br />
 ![intern_gitkware](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/533e8301-6589-47dc-a309-4882c1bc80af)
@@ -269,17 +269,28 @@ funct3 = 010, opcode for lw= 0000011 </br>
 # TASK-3
 
 <b>LAB BASED TASK</br>
-C program to calculate sum of n natural numbers</b>
+C program to calculate sum of n natural numbers</b></br>
 Open the terminal.</br>
 Type $leafpad sum1ton.c & to open leafpad which is an editor.</br>
 If it is not installed,install it using $sudo install leafpad.</br>
 Write  the c program in leafpad editor to calculate sum of n natural numbers and save it.</br>
-![intern_task3_1](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/692130e7-4732-45ac-a7e3-257a0b57b1eb)
+![intern_task3_1](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/692130e7-4732-45ac-a7e3-257a0b57b1eb)</br>
 Give command $gcc sum1ton.c </br>
 Give command $ ./a.out to see the output.</br>
-![intern_task3_2](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/11b8bc1c-05d3-4085-998f-f73d6b57ce43)
+![intern_task3_2](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/11b8bc1c-05d3-4085-998f-f73d6b57ce43) </br>
 Change the value of n to 100 in the editor and again run the command for output.</br>
-![intern_task3_3](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/36a4129b-3090-47ee-9376-eb5ddc650c94)
-![intern_task3_4](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/08f52872-e733-4969-b99d-4c48e90e4ba0)
-
-
+![intern_task3_3](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/36a4129b-3090-47ee-9376-eb5ddc650c94) </br>
+![intern_task3_4](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/08f52872-e733-4969-b99d-4c48e90e4ba0) </br>
+</br>
+<b>TO RUN THE SAME PROGRAM USING RISCV GCC COMPILER & SIMULATOR</b></br>
+Give command $ cat sum1ton.c to open the program in terminal.</br>
+1111...image for main address  </br>
+Give command $ riscv64-unknown-elf-gcc-o1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c which will generate an output file.</br>
+Go to another tab and give command $ riscv64-unknown-elf-objdump -d sum1ton.c --it will give a bunch of assembly language code.</br>
+Search for main address in that assembly language code -which has 15 instructions</br>
+1111...image for main address  </br>
+In the previous tab, instead of give command $ riscv64-unknown-elf-gcc-ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c which will generate an output file.</br>
+In the second tab run the same command $ riscv64-unknown-elf-objdump -d sum1ton.c | less -- and search for main again. </br>
+1111...image for main address  </br>
+This time main has 12 instructions. </br>
+1111...image for main address  </br>
