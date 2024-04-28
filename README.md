@@ -270,15 +270,15 @@ funct3 = 010, opcode for lw= 0000011 </br>
 
 <b>LAB BASED TASK</br>
 C program to calculate sum of n natural numbers</b>
-Open the terminal.
-Type $leafpad sum1ton.c & to open leafpad which is an editor.
-If it is not installed,install it using $sudo install leafpad.
-Write  the c program in leafpad editor to calculate sum of n natural numbers and save it.
+Open the terminal.</br>
+Type $leafpad sum1ton.c & to open leafpad which is an editor.</br>
+If it is not installed,install it using $sudo install leafpad.</br>
+Write  the c program in leafpad editor to calculate sum of n natural numbers and save it.</br>
 ![intern_task3_1](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/692130e7-4732-45ac-a7e3-257a0b57b1eb)
-Give command $gcc sum1ton.c 
-Give command $ ./a.out to see the output.
+Give command $gcc sum1ton.c </br>
+Give command $ ./a.out to see the output.</br>
 ![intern_task3_2](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/11b8bc1c-05d3-4085-998f-f73d6b57ce43)
-Change the value of n to 100 in the editor and again run the command for output.
+Change the value of n to 100 in the editor and again run the command for output.</br>
 ![intern_task3_3](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/36a4129b-3090-47ee-9376-eb5ddc650c94)
 ![intern_task3_4](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/08f52872-e733-4969-b99d-4c48e90e4ba0)
 
