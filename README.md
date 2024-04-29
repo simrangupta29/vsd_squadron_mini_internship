@@ -143,7 +143,7 @@ This instruction should deal with:</br>
  LUI – Load Upper Immediate</br>
 AUIPC – Add Upper Immediate to PC</br>
 </br>
-# ANALYSING OF SOME OF INSTRUCTIONS WITH MACHINE CODE
+# ANALYSING SOME OF THE INSTRUCTIONS WITH MACHINE CODE
 1.<b>add r6,r2,r1</b></br>
 It is R-type instruction.ADD is a typical ALU instruction in the class of 
 arithmatic and logic operations. It needs two source operands and one destination operands to store the results.</br>
