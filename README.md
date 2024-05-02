@@ -283,7 +283,7 @@ Change the value of n to 100 in the editor and again run the command for output.
 ![intern_task3_4](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/08f52872-e733-4969-b99d-4c48e90e4ba0) </br>
 </br>
 <b>TO RUN THE SAME PROGRAM USING RISCV GCC COMPILER & SIMULATOR</b></br>
-WE can the run these commands using VDI too which has preinstalled softwares in virtal box.</br>
+WE can the run these commands using VDI too which has preinstalled softwares in virtual box.</br>
 Give command $ cat sum1ton.c to open the program in terminal.</br>
  ![vsd_4](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/e701a9d8-1b78-40cc-b3ac-2ce7a8d1c818)
  </br>
