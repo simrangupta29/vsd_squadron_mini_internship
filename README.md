@@ -288,23 +288,21 @@ Give command $ cat sum1ton.c to open the program in terminal.</br>
  ![vsd_4](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/e701a9d8-1b78-40cc-b3ac-2ce7a8d1c818)
  </br>
 Give command $ riscv64-unknown-elf-gcc-o1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c which will generate an output file.</br>
-This command is compiling a C source file named "sum1ton.c" into an object file named "sum1ton.o" using the RISC-V GCC compiler with optimization level 1 (-O1), specifying the Application Binary Interface (ABI) as LP64 (-mabi=lp64), and the target architecture as RV64I (-march=rv64i).</br>
-    -mabi=ilp32: This option specifies the ABI (Application Binary Interface) to use ilp32, which is for a 32-bit integer, long, and pointer size. This ABI is used for 32-bit 
+<b>This command is compiling a C source file named "sum1ton.c" into an object file named "sum1ton.o" using the RISC-V GCC compiler with optimization level 1 (-O1), specifying the Application Binary Interface (ABI) as LP64 (-mabi=lp64), and the target architecture as RV64I (-march=rv64i)</b></br>
+<b>-mabi=ilp32:</b> This option specifies the ABI (Application Binary Interface) to use ilp32, which is for a 32-bit integer, long, and pointer size. This ABI is used for 32-bit 
     RISC-V architectures.</br>
-    -march=rv32i: This option specifies the architecture to use rv32i, which indicates a 32-bit RISC-V base integer instruction set. This further confirms the targeting of a 32- 
-     bit architecture.</br>
-     -riscv64 allows to  target any 32-bit or 64-bit architecture.</br>
+<b>-march=rv32i:</b> This option specifies the architecture to use rv32i, which indicates a 32-bit RISC-V base integer instruction set. This further confirms the targeting of a 32- bit architecture.</br>
+    <b>-riscv64</b> allows to  target any 32-bit or 64-bit architecture.</br>
 </br>
 Go to another tab and give command $ riscv64-unknown-elf-objdump -d sum1ton.o --it will give a bunch of assembly language code.</br>
- The command riscv64-unknown-elf-objdump -d sum1ton.o tells the objdump utility, customized for the RISC-V architecture, to disassemble the contents of the sum1ton.o object file 
-and display the resulting assembly language instructions.</br>
+ <b>The command riscv64-unknown-elf-objdump -d sum1ton.o tells the objdump utility, customized for the RISC-V architecture, to disassemble the contents of the sum1ton.o object file and display the resulting assembly language instructions.</b></br>
 Search for main address in that assembly language code </br>
-Main address starts from 10184 in hex and ends at 101ec in hex which means it has 27 instructions.</br>
+<b>Main address starts from 10184 in hex and ends at 101ec in hex which means it has 27 instructions.</b></br>
 ![vdi_2](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/e7808211-8835-4278-ad84-021ed65b52de)
 </br>
 In the previous tab, instead of give command $ riscv64-unknown-elf-gcc-ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c which will generate an output file.</br>
 In the second tab run the same command $ riscv64-unknown-elf-objdump -d sum1ton.c | less -- and search for main again. </br>
 Search for main address in that assembly language code </br>
-This time main starts from 10184 in hex and ends at 101ac in hex which means it has 11 instructions. </br>
+<b>This time main starts from 10184 in hex and ends at 101ac in hex which means it has 11 instructions.</b> </br>
 ![WhatsApp Image 2024-05-02 at 10 47 57_dbb39ad5](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/195bab90-8306-4098-9a75-a2e8f6ac553e)
   </br>
