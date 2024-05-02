@@ -29,3 +29,5 @@ $sudo apt-get install iverilog<br />
 $sudo apt update<br />
 $sudo apt install gtkwave<br />
 ![intern_gitkware](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/533e8301-6589-47dc-a309-4882c1bc80af)
+git rm file1.txt
+git commit -m "remove file1.txt"
