@@ -1,1 +1,86 @@
+**Spike and pk (proxy kernel)** are components of the RISC-V ISA (Instruction Set Architecture) ecosystem. 			
 
+> * **1.Spike:** _Spike is a RISC-V ISA simulator. It emulates a RISC-V processor and allows to run RISC-V programs on computer without needing actual RISC-V hardware._				
+
+> * **2.Proxy Kernel (pk):** _Proxy Kernel is a small software layer that provides an interface between the RISC-V hardware and a RISC-V operating system. It is used when running an operating system on Spike. pk initializes the system, sets up memory, handles system calls, and provides other essential functionalities required by the operating system._
+
+
+**#METHOD-2**  		
+
+I have downloaded to VDI file which has spike,pk and riscv installaton and followed the Task-3.    
+
+> * Method 1 explains Manual Installation.     		
+> * Method 2 is Pre-installed VDI.  			
+> * Method 1 discusses installing Spike and pk, while Method 2 provides a VirtualBox disk image (VDI) with Spike and pk already installed.		
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+_--compiling the .C using GCC Compiler_
+```
+$ riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+$ gcc sum1ton.c
+$ ./a.out   
+```
+
+
+_--compiling the .C using riscv Compiler_ **(using  Ofast)**
+```
+$ riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+$ spike pk sum1ton.o
+$ spike -d pk sum1ton.o
+```
+```
+$ riscv64-unknown-elf-objdump -d sum1ton.o | less
+```	
+--Debugging the Assembly Language Program from sum1ton.c and Analyzing each Register Instruction_		
+
+```
+$ spike -d pk sum1ton.o
+**#FIRST INSTRUCTION:** 
+> * The address_of_first_main()_instruction is 100b0 to execute this 
+```
+(spike) until pc 0 101b0
+```
+> * To determine the value stored in the **"a0"** register before the execution of the first instruction, the following command is used.
+```
+(spike) reg 0 a0
+``` 
+> * Press enter to run the first instruction.  
+> * The value of register **"a0"** is **"0x0000000000000001"**, indicating that each position in the 64-bit RISC-V object file contains a 4-bit data, confirming the program's compilation into a 64-bit format.    
+> * After executing the first instruction, we can verify the content of register **"a0"** by using the command reg 0 a0.  
+> * The content of register **"a0"** has been updated due to the **lui a0,0x21** instruction. which loads the upper immediate value 0x21 into the upper bits of register **"a0"**.The 0x prefix signifies that 21 is a hexadecimal value.  
+																			
+**#SECOND INSTRUCTION:**    
+> * The next instruction has sp (stack pointer).  
+> * Before executing the second instruction, we will check the value of the stack pointer (sp).  
+```
+(spike) reg 0 sp
+```
+> * The current value stored in the stack pointer **"(sp)"** is **"0x3ffffffb50"**.Press enter to run the second instruction.    
+> * The addi sp,sp,-16 instruction in the compressed instruction set (rv64c) performs an addition of the immediate value -16 to the stack pointer (sp), effectively subtracting decimal 16 from the current value of the stack pointer.
+> * The value of (16) in decimal is equivalent to (10) in hexadecimal. The stack pointer (sp) value before the execution of addi sp,sp, -16 was 0x3ffffffb50, and subtracting 0x10 from it yields **"0x3ffffffb40"**.
+> * To proceed with executing the next instructions, we will repeat the same procedure.
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+_--compiling the .C using riscv Compiler_ **(using  O1)**
+```
+$ riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+$ spike pk sum1ton.o
+$ spike -d pk sum1ton.o
+```
+
+```
+$ riscv64-unknown-elf-objdump -d sum1ton.o | less
+```
+
+
+
+
+
+
+
+                                                               
