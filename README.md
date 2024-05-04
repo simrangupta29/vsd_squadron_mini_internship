@@ -350,4 +350,5 @@ $ spike -d pk sum1ton.o
 ![task4_4](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/ea850ee5-7d5c-48fd-9825-eb7f2b875720)
 
 
-<b>DEBUGGING</
+<b>DEBUGGING</b>
+> *  _
