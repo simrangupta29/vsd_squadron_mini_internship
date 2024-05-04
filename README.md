@@ -320,7 +320,7 @@ Search for main address in that assembly language code </br>
 WE can the run these commands using VDI too which has preinstalled softwares in virtual box.</br>   
 
 
-_--First I compiled using GCC Compiler as we did in task3 _
+First compiled using GCC Compiler as we did in task3 
 ```
 $ riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 $ gcc sum1ton.c
@@ -328,12 +328,12 @@ $ ./a.out
 ```
 
 
-_-- Using riscv Compiler**_
+ Using riscv Compiler**
 ```
 $ riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 ```
 
-_--Simulating using spike and proxy kernel _
+Simulating using spike and proxy kernel 
 ```
 $ spike pk sum1ton.o
 $ spike -d pk sum1ton.o
