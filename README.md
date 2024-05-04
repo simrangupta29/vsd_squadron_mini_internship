@@ -320,26 +320,34 @@ Search for main address in that assembly language code </br>
 WE can the run these commands using VDI too which has preinstalled softwares in virtual box.</br>   
 
 
-First compiled using GCC Compiler as we did in task3 
+First compiled and got output using  as we did in task3 
 ```
 $ riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
 $ gcc sum1ton.c
 $ ./a.out   
 ```
 
+![task4_1](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/6081b6b7-9f3c-4004-bb9d-08b5c535d12c)
 
- Using riscv Compiler**
-```
-$ riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
-```
-
-Simulating using spike and proxy kernel 
+ Getting Output using spike**
 ```
 $ spike pk sum1ton.o
-$ spike -d pk sum1ton.o
 ```
 
+![task4_2](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/b8efe6f6-6fa3-4a23-a1fc-f4353d07b052)
+
+Disassemble the contents of the sum1ton.o object
 ```
 $ riscv64-unknown-elf-objdump -d sum1ton.o | less
-```	
+```
 
+![task4_3](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/12ff8f39-e68e-4994-9da3-10ffb24d81ee)
+
+Simulating and Debugging using spike and proxy kernel 
+```
+$ spike -d pk sum1ton.o
+```
+![task4_4](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/ea850ee5-7d5c-48fd-9825-eb7f2b875720)
+
+
+<b>DEBUGGING</
