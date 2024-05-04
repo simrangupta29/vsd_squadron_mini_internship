@@ -350,5 +350,11 @@ $ spike -d pk sum1ton.o
 ![task4_4](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/ea850ee5-7d5c-48fd-9825-eb7f2b875720)
 
 
-<b>DEBUGGING</b>
-> *  _
+<b>DEBUGGING</b></br>
+</br>
+spike -d pk sum1ton.o is a command used to simulate the execution of a RISC-V program represented by the binary file sum1ton.o and the proxy kernel, enables debug mode for detailed analysis and debugging.</br>
+</br>
+> * until pc 0 100b0:_ In the Spike RISC-V simulator,it instructs the simulator to execute instructions until the program counter (pc) reaches the address 100b0._
+> * reg 0 a0:_This command is often used during debugging sessions to inspect the state of registers at various points during program execution._
+> * lui a0, 0x21:_This instruction loads the immediate value 0x21 into the upper bits of register a0, effectively setting the lower 12 bits to zero.After executing this instruction, register a0 will contain the value 0x0000000021000000_
+> * addi sp, sp, -16:_ This instruction subtracts 16 from the stack pointer, effectively allocating 16 bytes of space on the stack.Before executing this instruction, the stack pointer (sp) 0x0000003ffffffb50. After executing addi sp, sp, -16, 16 is subtracted from the value in the stack pointer.Now, the sp has 0x0000003ffffffb40._
