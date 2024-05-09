@@ -63,7 +63,7 @@ $sudo apt install gtkwave
 # TASK-2
 <b> ABOUT RISC-V ARCHITECTURE </b>
 
->* RISC-V is an open, versatile instruction-set architecture supporting diverse implementations.
+>* RISC-V is an open, versatile instruction-set architecture supporting diverse implementations.</br>
 RISC-V is the first widely accepted open-source RISC processor.
 It features a base integer ISA, optional extensions, 32/64-bit variants, IEEE-754 floating-point support, and facilitates experimentation with privileged architectures, hypervisors, and parallel computing.
 
@@ -77,7 +77,7 @@ means the instruction must use 3 x 5-bit = 15 bit of the 32-bit instruction._
 
 >* **2.MEMORY-** _The instruction must specify the data memory address, using a register as a pointer._
  
->* **3.CONSTANTS(IMMEDIATES)-** _The third is from instruction memory, i.e. the operand is a constant within  the instruction itself. this is also called an immediate._
+>* **3.CONSTANTS(IMMEDIATES)-** _The third is from instruction memory, i.e. the operand is a constant within  the instruction itself, this is also called an immediate._
 
 <b>The format of the instructions are divided into only six different types</b></br>
 </br>
