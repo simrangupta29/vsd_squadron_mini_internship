@@ -81,43 +81,51 @@ means the instruction must use 3 x 5-bit = 15 bit of the 32-bit instruction._
 
 <b>The format of the instructions are divided into only six different types</b></br>
 </br>
-1.<b>R-type (Register/register)</b> instructions use only registers as source and 
+<b>1.R-type (Register/register)</b> instructions use only registers as source and 
 destiantions. This instruction type is mostly used for arithmetic and logic 
 operations involving the ALU.</br>
+
 | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 |
 |----------|----------|----------|----------|----------|----------|----------|
 | INSTRUCTION TYPE   |     [25-31]           |  [20-24]  | [15-19]    | [12-14] | [7-11]  | [0-6]     |
 | Register  | function7     | rs2     | rs1   | function3     |   rd     |  opcode    |
 
+</br>
 
  >* opcode (7): partially specifies operation.e.g. R-types have opcode = 0b0110011. </br>
 funct7+funct3 (10): combined with opcode, these two fields describe what operation to perform .</br>
 rs1 (5): 1st operand (“source register 1”).</br>
- rs2 (5): 2nd operand (second source register). </br>
- rd (5): “destination register” — receives the result of computation .</br>
+rs2 (5): 2nd operand (second source register). </br>
+rd (5): “destination register” — receives the result of computation .</br>
  We know that RISCV has 32 registers </br> A 5 bit field can represent exactly 25 = 32 things  
 (interpret as the register numbers x0-x31).</br>
 
 
-2.<b>I-type (Immediate)</b> instructions has one of the two source operands specified 
+
+<b>2.I-type (Immediate)</b> instructions has one of the two source operands specified 
 within the 32-bit instruction word as a 12-bit constant (or immediate). This 
 constant is regards as 12-bit signed 2’s complement number, which is always 
-sign extended to form a 32-bit operand.</br>
+sign extended to form a 32-bit operand</br>.
+</br>
+
 | Column 1 | Column 2            | Column 3 | Column 4 | Column 5 | Column 6 |
 |----------|---------------------|----------|----------|----------|----------|
 |INSTRUCTION TYPE     |        [20-31]         | [15-19]     |  [12-14]    | [7-11]     | [0-6]     |
 | Immediates     | imm[11:0]                | rs1      | function3     | rd     | opcode     |
 
 </br>
- opcode (7): uniquely specifies the instruction</br>
+
+ >* Opcode (7): uniquely specifies the instruction</br>
  rs1 (5): specifies a register operand</br>
  rd (5): specifies destination register that receives result of computation</br>
  immediate (12): 12 bit number– All computations done in words, so 12-bit immediate must be extended to 32 bits</br>
                               – always sign-extended to 32-bits before use in an arithmetic operation</br>
  imm[11:0] can hold values in range [-211 , +211)</br>
  </br>
- 3.<b>S-type (Store)</b> instructions are exclusively used for storing contents of a 
+ 
+ <b>3.S-type (Store)</b> instructions are exclusively used for storing contents of a 
 register to data memory. </br>
+
 
 | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 |
 |----------|----------|----------|----------|----------|----------|----------|
@@ -125,10 +133,12 @@ register to data memory. </br>
 | Register  |  imm[11:5]      | rs2     | rs1   | function3     |   imm[4:0]      |  opcode    |
 
 </br>
-Store needs to read two registers, rs1 for base memory address, and rs2 for data to be stored, as well as need immediate offset.</br>
+
+>* Store needs to read two registers, rs1 for base memory address, and rs2 for data to be stored, as well as need immediate offset.</br>
  Can’t have both rs2 and immediate in same place as other instructions.</br>
  Note: stores don’t write a value to the register file, no rd!</br>
  RISC-V design decision is move low 5 bits of immediate to where rd field was in other instructions – keep rs1/rs2 fields in same place</br>
+ 
 </br>
 
 4.<b>B-type (Branch)</b> instructions are used to control program flow. It compares 
