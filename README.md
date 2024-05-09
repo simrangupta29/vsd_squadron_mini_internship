@@ -295,7 +295,7 @@ func3 = 010,Opcode for SW = 0100011</br>
 0000000 00011 00001 010 00010 0100011</b></br>
 
 ```
-9.SRL r16, r14, r2
+9.SRL R16, R14, R2
 ```
 <b>SRL stands for Logical Shift Right.It is S-type instruction set.</br>
 r16 is the destination register</br>
@@ -330,7 +330,7 @@ func3 = 000,Opcode for BEQ = 1100011</br>
 0 000000 00000 00000 000 1111 0 1100011</b></br>
 
 ```
-12.LW r13,r1,2
+12.LW R13,R1,2
 ```
 <b>It is I-type instruction set.</br>
 The "lw" (load word) instruction is used to load a word from memory into a register. </br>
