@@ -1,5 +1,5 @@
 
-module iiitb_rv32i(clk,RN,NPC,WB_OUT);
+module simran_rv32i(clk,RN,NPC,WB_OUT);
 input clk;
 input RN;
 //input EN;
