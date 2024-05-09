@@ -67,7 +67,7 @@ $sudo apt install gtkwave
 RISC-V is the first widely accepted open-source RISC processor.</br>
 It features a base integer ISA, optional extensions, 32/64-bit variants, IEEE-754 floating-point support, and facilitates experimentation with privileged architectures, hypervisors, and parallel computing.
 
-<b> INSTRUCTION SET IN RISCV </b>
+<b> INSTRUCTION SET IN RISCV:- </b>
 The RISC-V instruction set is known as RV32I (RISC-V 32-bit integer only) only has 40 instructions. The ISA ( instruction set architecure ) has two sources and one 
 destination operands.</br>
 
@@ -81,7 +81,7 @@ means the instruction must use 3 x 5-bit = 15 bit of the 32-bit instruction._
 
 <b>The format of the instructions are divided into only six different types</b></br>
 </br>
-<b>1.R-type (Register/register)</b>:These are instructions use only registers as source and 
+<b>1.R-type (Register/register)</b>:-These are instructions use only registers as source and 
 destiantions. This instruction type is mostly used for arithmetic and logic 
 operations involving the ALU.</br>
 
@@ -102,7 +102,7 @@ rd (5): “destination register” — receives the result of computation .</br>
 
 
 
-<b>2.I-type (Immediate)</b>:These are instructions has one of the two source operands specified 
+<b>2.I-type (Immediate)</b>:-These are instructions has one of the two source operands specified 
 within the 32-bit instruction word as a 12-bit constant (or immediate). This 
 constant is regards as 12-bit signed 2’s complement number, which is always 
 sign extended to form a 32-bit operand</br>.
@@ -123,7 +123,7 @@ sign extended to form a 32-bit operand</br>.
  imm[11:0] can hold values in range [-211 , +211]</br>
  </br>
  
- <b>3.S-type (Store)</b> :These instructions are exclusively used for storing contents of a 
+ <b>3.S-type (Store)</b> :-These instructions are exclusively used for storing contents of a 
 register to data memory. </br>
 
 
@@ -141,7 +141,7 @@ register to data memory. </br>
  
 </br>
 
-<b>4.B-type (Branch)</b>These instructions are used to control program flow. It compares 
+<b>4.B-type (Branch):-</b>These instructions are used to control program flow. It compares 
 two operands stored in registers and branch to a destination address relative 
 to the current Program Counter value. </br>
 
@@ -162,7 +162,7 @@ pc=pc+4(which execute next input)</br>
 
 </br>
 
-<b>5.J-type (Jump)</b>:These instructions are used for subroutine calls.</br>
+<b>5.J-type (Jump)</b>:-These instructions are used for subroutine calls.</br>
 
 | Column 1 | Column 2          | Column 3          | Column 4 | Column 5 |
 |----------|-------------------|-------------------|----------|----------|
@@ -193,8 +193,10 @@ jal saves PC+4 in register rd (the return address)<br>
 AUIPC – Add Upper Immediate to PC</br>
 
 </br>
-# ANALYSING SOME OF THE INSTRUCTIONS WITH MACHINE CODE
-1. <b>add r6,r2,r1</b></br>
+<b> ANALYSING SOME OF THE INSTRUCTIONS WITH MACHINE CODE<b></br>
+```
+ADD R6,R2,R1
+```
 It is R-type instruction.ADD is a typical ALU instruction in the class of 
 arithmatic and logic operations. It needs two source operands and one destination operands to store the results.</br>
 rs1=r2=00010,rs2=r1 = 00001</br>
@@ -204,7 +206,10 @@ opcode =0110011 funct3 = 000, funct7 = 0000000</br>
 32 bit instruction(funct7 rs2 rs1 fun3 rd opcode )</br>
 0000000 00001 00010 000 00110 0110011</br>
 
-2.<b>SUB r7, r1, r2</b></br>
+```
+2.SUB R7, R1, R2
+```
+
 It is R-type instruction.SUB is a typical ALU instruction in the class of 
 arithmatic and logic operations. It needs two source operands and one destination 
 operands to store the results.</br>
@@ -215,8 +220,9 @@ opcode =0110011 funct3 = 000, funct7 =  0100000</br>
 32 bit instruction(funct7 rs2 rs1 fun3 rd opcode )</br>
 0000000 00010 00001 000 00111  0100000</br>
 
-
-3.<b>AND r8, r1, r3</b></br>
+```
+3.AND R8, R1, R3
+```
 This instruction belongs to R-type instruction set.
 r8 will hold the value of r1 & r3, having bitwise and</br>
 rd = r8 = 01000</br>
@@ -227,7 +233,9 @@ Opcode for AND = 0110011,func3 = 111,func7 = 0000000</br>
 32 bits instruction :</br>
 0000000 00011 00001 111 01000 0110011</br>
 
-4.<b>OR r9,r2,r5</b></br>
+```
+4.OR R9,R2,R5
+```
 It is also an R-type instruction.</br>
 rd = r9=01001</br>
 rs1 = r2=00010 ,rs2= r5:00101</br> 
@@ -236,7 +244,9 @@ The operation is specified with the opcode, funct3 and funct7 fields of the inst
 32 bits instruction :</br>
 0000000 00101 00010 110 01001 0110011</br>
 
-5.<b> XOR r10, r1, r4</b></br>
+```
+5. XOR R10, R1, R4
+```
 It is R-type instruction set.</br>
 XOR operation bit by bit.</br>
 rd = r10 = 01010</br>
@@ -247,7 +257,9 @@ The operation is specified with the opcode, funct3 and funct7 fields of the inst
 32 bits instruction :</br>
 0000000 00100 00001 100 01010 0110011</br>
 
-6.<b>SLT r1, r2, r4</b></br>
+```
+6.SLT R1, R2, R4
+```
 It is R-type instruction set.</br>
 rd = r1 = 00001</br>
 rs1 = r2 = 00010</br>
@@ -257,7 +269,9 @@ The operation is specified with the opcode, funct3 and funct7 fields of the inst
 32 bits instruction :</br>
 0000000 00100 00010 010 00001 0110011</br>
 
-7.<b>ADDI r12, r4, 5</b></br>
+```
+7.ADDI R12, R4, 5
+```
 It is I-type instruction set.</br>
 rd = r12 =r4+5= 01100</br>
 rs1 = r4 = 00100</br>
@@ -266,7 +280,9 @@ func3 = 000, Opcode for ADDI = 0010011</br>
 32 bits instruction :</br>
 000000000000101 00100 000 01100 0010011</br>
 
-8.<b>SW r3, r1, 2</b></br>
+```
+8.SW R3, R1, 2
+```
 It is S-type instruction set.</br>
 r3 is the source register.</br> 
 rs2 = r3 = 00011</br>
@@ -276,7 +292,9 @@ func3 = 010,Opcode for SW = 0100011</br>
 32 bits instruction : </br>
 0000000 00011 00001 010 00010 0100011</br>
 
-9.<b>SRL r16, r14, r2</b></br>
+```
+9.SRL r16, r14, r2
+```
 SRL stands for Logical Shift Right.It is S-type instruction set.</br>
 r16 is the destination register</br>
 rd = r16 = 10000</br>
@@ -285,7 +303,9 @@ rs2 = r2 = 00010</br>
 func3 = 101,func7 = 0000000,Opcode for SRL = 0110011</br>
 32 bits instruction : 0000000 00010 01110 101 10000 0110011</br>
 
-10.<b>BNE r0, r1, 20</b></br>
+```
+10.BNE R0, R1, 20
+```
 BNE is a B-type instruction . In BNE, the value stored in r0 !=  the value stored in r1.</br>
 If the condition is true, PC = PC + 20, elsePC= PC + 4 </br>
 rs1 = r0 = 00000</br>
@@ -295,7 +315,9 @@ func3 = 001,Opcode for BNE = 1100011</br>
 32 bits instruction :</br>
 0 000001 00001 00000 001 0100 0 1100011</br>
 
-11.<b>BEQ r0, r0, 15</b></br>
+```
+11.BEQ R0, R0, 15
+```
 BEQ is a B-type instruction. In BEQ,the value stored in r0 == the value stored in r0. </br>
 If the condition is true, PC= PC + 15, else PC=PC+4</br>
 rs1 = r0 = 00000</br>
@@ -305,7 +327,9 @@ func3 = 000,Opcode for BEQ = 1100011</br>
 32 bits instruction :</br>
 0 000000 00000 00000 000 1111 0 1100011</br>
 
-12.<b>LW r13,r1,2</b></br>
+```
+12.LW r13,r1,2
+```
 It is I-type instruction set.</br>
 The "lw" (load word) instruction is used to load a word from memory into a register. </br>
 rd =r13=01101</br>
