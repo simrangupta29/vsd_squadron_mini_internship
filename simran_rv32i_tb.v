@@ -13,7 +13,7 @@ RN  = 1'b1;
 clk = 1'b1;
 
   $dumpfile ("simran_rv32i.vcd"); //by default vcd
-$dumpvars (0, iiitb_rv32i_tb);
+  $dumpvars (0, simran_rv32i_tb);
   
   #5 RN = 1'b0;
   
