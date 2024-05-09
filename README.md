@@ -64,7 +64,7 @@ $sudo apt install gtkwave
 <b> ABOUT RISC-V ARCHITECTURE </b>
 
 >* RISC-V is an open, versatile instruction-set architecture supporting diverse implementations.</br>
-RISC-V is the first widely accepted open-source RISC processor.
+RISC-V is the first widely accepted open-source RISC processor.</br>
 It features a base integer ISA, optional extensions, 32/64-bit variants, IEEE-754 floating-point support, and facilitates experimentation with privileged architectures, hypervisors, and parallel computing.
 
 <b> INSTRUCTION SET IN RISCV </b>
@@ -90,13 +90,13 @@ operations involving the ALU.</br>
 | Register  | function7     | rs2     | rs1   | function3     |   rd     |  opcode    |
 
 
- >* opcode (7): partially specifies operation.e.g. R-types have opcode = 0b0110011 
-funct7+funct3 (10): combined with opcode, these two fields describe what operation to perform 
-rs1 (5): 1st operand (“source register 1”)
- rs2 (5): 2nd operand (second source register) 
- rd (5): “destination register” — receives the result of computation 
+ >* opcode (7): partially specifies operation.e.g. R-types have opcode = 0b0110011. </br>
+funct7+funct3 (10): combined with opcode, these two fields describe what operation to perform .</br>
+rs1 (5): 1st operand (“source register 1”).</br>
+ rs2 (5): 2nd operand (second source register). </br>
+ rd (5): “destination register” — receives the result of computation .</br>
  We know that RISCV has 32 registers </br> A 5 bit field can represent exactly 25 = 32 things  
-(interpret as the register numbers x0-x31)
+(interpret as the register numbers x0-x31).</br>
 
 
 2.<b>I-type (Immediate)</b> instructions has one of the two source operands specified 
