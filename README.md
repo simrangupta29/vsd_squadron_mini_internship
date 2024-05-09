@@ -61,19 +61,24 @@ $sudo apt install gtkwave
 ![intern_gitkware](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/533e8301-6589-47dc-a309-4882c1bc80af)
 
 # TASK-2
-# ABOUT RISC-V
-RISC-V is an open, versatile instruction-set architecture supporting diverse implementations. </br>
-RISC-V is the first widely accepted open-source RISC processor. </br>
+<b> ABOUT RISC-V ARCHITECTURE </b>
+
+>* RISC-V is an open, versatile instruction-set architecture supporting diverse implementations.
+RISC-V is the first widely accepted open-source RISC processor.
 It features a base integer ISA, optional extensions, 32/64-bit variants, IEEE-754 floating-point support, and facilitates experimentation with privileged architectures, hypervisors, and parallel computing.
-# INSTRUCTION SET IN RISCV
+
+<b> INSTRUCTION SET IN RISCV </b>
 The RISC-V instruction set is known as RV32I (RISC-V 32-bit integer only) only has 40 instructions. The ISA ( instruction set architecure ) has two sources and one 
 destination operands.</br>
-# RISCV OPERANDS LOCATION
-1.<b>REGISTER</b>-The fastest and most often used operand is from or to registers on the CPU chip itself. RISC-V RV32I has 32 32-bit registers. 32 registers 
-means the instruction must use 3 x 5-bit = 15 bit of the 32-bit instruction.</br>
-2.<b>MEMORY</b>-the instruction must specify the data memory address, using a register as a pointer</br>
-3.<b>CONSTANTS(IMMEDIATES)</b>-The third is from instruction memory, i.e. the operand is a constant within  the instruction itself. this is also called an immediate.</br>
-</br>
+
+<b>RISCV OPERANDS LOCATION</b>
+>* **1.REGISTER-** _The fastest and most often used operand is from or to registers on the CPU chip itself. RISC-V RV32I has 32 32-bit registers. 32 registers 
+means the instruction must use 3 x 5-bit = 15 bit of the 32-bit instruction._
+
+>* **2.MEMORY-** _The instruction must specify the data memory address, using a register as a pointer._
+ 
+>* **3.CONSTANTS(IMMEDIATES)-** _The third is from instruction memory, i.e. the operand is a constant within  the instruction itself. this is also called an immediate._
+
 <b>The format of the instructions are divided into only six different types</b></br>
 </br>
 1.<b>R-type (Register/register)</b> instructions use only registers as source and 
@@ -84,15 +89,15 @@ operations involving the ALU.</br>
 | INSTRUCTION TYPE   |     [25-31]           |  [20-24]  | [15-19]    | [12-14] | [7-11]  | [0-6]     |
 | Register  | function7     | rs2     | rs1   | function3     |   rd     |  opcode    |
 
-</br>
- opcode (7): partially specifies operation.e.g. R-types have opcode = 0b0110011 </br>
-funct7+funct3 (10): combined with opcode, these two fields describe what operation to perform </br>
-rs1 (5): 1st operand (“source register 1”) </br>
- rs2 (5): 2nd operand (second source register) </br>
- rd (5): “destination register” — receives the result of computation </br>
- We know that RISCV has 32 registers </br> A 5 bit field can represent exactly 25 = 32 things  </br>
-(interpret as the register numbers x0-x31)</br>
-</br>
+
+ >* opcode (7): partially specifies operation.e.g. R-types have opcode = 0b0110011 
+funct7+funct3 (10): combined with opcode, these two fields describe what operation to perform 
+rs1 (5): 1st operand (“source register 1”)
+ rs2 (5): 2nd operand (second source register) 
+ rd (5): “destination register” — receives the result of computation 
+ We know that RISCV has 32 registers </br> A 5 bit field can represent exactly 25 = 32 things  
+(interpret as the register numbers x0-x31)
+
 
 2.<b>I-type (Immediate)</b> instructions has one of the two source operands specified 
 within the 32-bit instruction word as a 12-bit constant (or immediate). This 
