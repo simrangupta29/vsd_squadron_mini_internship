@@ -390,12 +390,93 @@ $ gtkwave simran_rv32i.vcd
 ```
 ![verilog](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/fcafa177-27f2-44a7-8214-f1004cda8d1b)
 
+<b>The instructions which are to be simulate are:-</b>
+
+![Screenshot (558)](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/3007623d-0d62-4e13-aa9a-84ab4a5d1b70)
+
 <b>Now Let's anaylze wave form of each instruction using gtkwave.
 ```
-1. ADD R6,R2,R1
+1. ADD R6,R2,R1</b>
 ```
 ![WhatsApp Image 2024-05-09 at 15 21 03_58c86c3c](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/e04b571e-05e5-49fa-995a-1eb87491bed7)
 </br>
 >* As it is shown in the waveform the contents of register R1=1  and register R2=2 are added, and the result which is 1+2=3 is stored in register R6.The hard-corded 32bit ISA for this instruction is 32'h02208300.
 
+```
+<b>2:SUB R7,R1,R2</b>
+```
+![WhatsApp Image 2024-05-09 at 15 20 59_10b4984a](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/cf520af0-d96b-4c62-ad19-639c45eae15a)
 
+>* As it is shown in the waveform the contents of register R1=2 are subtracted from the contents of register R2=1, and the result which is 1-2=-1 is stored in register R7.The hard-corded 32bit ISA for this instruction is 32'h02209380.
+
+```
+<b>3.AND R8, R1, R3</b>
+```
+![WhatsApp Image 2024-05-09 at 15 20 59_c1f52b9f](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/62c3d9d6-cc43-478d-9e45-3e6a09288481)
+
+>*  As it is shown in the waveform, it performs a bitwise AND operation between the contents of register R1=3(0011) and register R3=1(0001), and stores the result in register R8=1(0001).The hard-corded 32bit ISA for this instruction is 32'h0230a400.
+
+```
+<b>4.OR R9, R2, R5</b>
+```
+
+![WhatsApp Image 2024-05-09 at 15 21 04_c93bf218](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/b07d179c-bdb7-43d1-809d-301c559f663a)
+
+>*  As it is shown in the waveform, it performs a bitwise OR operation between the contents of register R2=2(0010) and register R5=5(0101), and stores the result in register R9=7(0111).The hard-corded 32bit ISA for this instruction is 32'h02513480.
+
+
+```
+<b>5.XOR R10, R1, R4</b>
+```
+
+![WhatsApp Image 2024-05-09 at 15 21 00_e30a8b4b](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/44583ba2-b4d0-4655-8829-e41c32c85d8c)
+
+>*  As it is shown in the waveform, it performs a bitwise XOR operation between the contents of register R1 and register R4, and stores the result in register R10.The hard-corded 32bit ISA for this instruction is 32'h0240c500.
+
+```
+<b>6.SLT R1, R2, R4</b>
+```
+
+![WhatsApp Image 2024-05-09 at 15 20 59_df25ada7](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/34cc090a-588a-411c-a873-b5a1d9bd76c9)
+
+
+>*  As it is shown in the waveform, this instruction sets register R1 to 1 if the value in register R2 is less than the value in register R4, and sets it to 0 otherwise.Here R2<R4 so R1=1.The hard-corded 32bit ISA for this instruction is 32'h02415580.
+
+
+```
+<b>7.ADDI R12, R4, 5</b>
+```
+
+![WhatsApp Image 2024-05-09 at 15 20 58_df092cd8](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/9262b4bc-89ef-4fd4-b820-25d845fb66a9)
+
+
+>*  As it is shown in the waveform, it adds an immediate value (in this case, 5) to the contents of register R4=4 and stores the result (4+5=9) in register R12.The hard-corded 32bit ISA for this instruction is 32'h00520600.
+
+```
+<b>8.SW R3, R1, 2</b>
+```
+
+![WhatsApp Image 2024-05-09 at 15 20 59_d12f9fd7](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/0ef4defd-6b8d-487c-a0cb-0530625344a6)
+
+
+>*  As it is shown in the waveform, it stores the contents of register R3 into the memory address calculated by adding the contents of register R1 and the immediate value 2.The hard-corded 32bit ISA for this instruction is 32'h00209181.
+
+```
+<b>9.LW R13, R1, 2</b>
+```
+
+![WhatsApp Image 2024-05-09 at 15 20 57_6fd51942](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/6bbf04d0-a9c7-4276-92ac-d693eb27c8a3)
+
+
+>*  As it is shown in the waveform, this instruction loads a 32-bit word from the memory address obtained by adding the contents of register R1 and the immediate value 2 into register R13.The hard-corded 32bit ISA for this instruction is 32'h00208681.
+
+
+
+```
+<b>10.BEQ R0, R0, 15</b>
+```
+
+![WhatsApp Image 2024-05-09 at 15 21 00_bbc85928](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/c6733030-122c-43f0-95e1-aedeb04047db)
+
+
+>*  As it is shown in the waveform, it checks the contents of two registers here both are R0.Theyare equal therefore the PC(Program counter)would increment by 15.The hard-corded 32bit ISA for this instruction is 32'h00f00002.
