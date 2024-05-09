@@ -193,10 +193,12 @@ jal saves PC+4 in register rd (the return address)<br>
 AUIPC – Add Upper Immediate to PC</br>
 
 </br>
-<b> ANALYSING SOME OF THE INSTRUCTIONS WITH MACHINE CODE<b></br>
+<b> ANALYSING SOME OF THE INSTRUCTIONS WITH MACHINE CODE</b></br>
+
 ```
-ADD R6,R2,R1
+1.ADD R6,R2,R1
 ```
+
 It is R-type instruction.ADD is a typical ALU instruction in the class of 
 arithmatic and logic operations. It needs two source operands and one destination operands to store the results.</br>
 rs1=r2=00010,rs2=r1 = 00001</br>
