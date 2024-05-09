@@ -345,7 +345,7 @@ Search for main address in that assembly language code </br>
 
  		
 
-WE can the run these commands using VDI too which has preinstalled softwares in virtual box.</br>   
+WE can run these commands using VDI too which has preinstalled softwares in virtual box.</br>   
 
 
 First compiled and got output using gcc as we did in task3 
