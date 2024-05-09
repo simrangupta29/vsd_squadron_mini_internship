@@ -388,7 +388,7 @@ spike -d pk sum1ton.o is a command used to simulate the execution of a RISC-V pr
 > * addi sp, sp, -16:_ This instruction subtracts 16 from the stack pointer, effectively allocating 16 bytes of space on the stack.Before executing this instruction, the stack pointer (sp) 0x0000003ffffffb50. After executing addi sp, sp, -16, 16 is subtracted from the value in the stack pointer.Now, the sp has 0x0000003ffffffb40
 
 
-# <b>TASK-4</b>
+# <b>TASK-5</b>
 <b>Functional simulation experiment using RISC-V Core Verilog netlist and testbench.</b> 
 
 > * **1.IVERILOG:** _Icarus Verilog (IVerilog) is an open-source hardware description language (HDL) simulator.It compiles the Verilog/SystemVerilog code and produces a simulation executable that simulates the behavior of the described hardware._
