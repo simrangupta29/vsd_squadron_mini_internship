@@ -81,7 +81,7 @@ means the instruction must use 3 x 5-bit = 15 bit of the 32-bit instruction._
 
 <b>The format of the instructions are divided into only six different types</b></br>
 </br>
-<b>1.R-type (Register/register)</b> instructions use only registers as source and 
+<b>1.R-type (Register/register)</b>:These are instructions use only registers as source and 
 destiantions. This instruction type is mostly used for arithmetic and logic 
 operations involving the ALU.</br>
 
@@ -102,7 +102,7 @@ rd (5): “destination register” — receives the result of computation .</br>
 
 
 
-<b>2.I-type (Immediate)</b> instructions has one of the two source operands specified 
+<b>2.I-type (Immediate)</b>:These are instructions has one of the two source operands specified 
 within the 32-bit instruction word as a 12-bit constant (or immediate). This 
 constant is regards as 12-bit signed 2’s complement number, which is always 
 sign extended to form a 32-bit operand</br>.
@@ -120,10 +120,10 @@ sign extended to form a 32-bit operand</br>.
  rd (5): specifies destination register that receives result of computation</br>
  immediate (12): 12 bit number– All computations done in words, so 12-bit immediate must be extended to 32 bits</br>
                               – always sign-extended to 32-bits before use in an arithmetic operation</br>
- imm[11:0] can hold values in range [-211 , +211)</br>
+ imm[11:0] can hold values in range [-211 , +211]</br>
  </br>
  
- <b>3.S-type (Store)</b> instructions are exclusively used for storing contents of a 
+ <b>3.S-type (Store)</b> :These instructions are exclusively used for storing contents of a 
 register to data memory. </br>
 
 
@@ -141,9 +141,10 @@ register to data memory. </br>
  
 </br>
 
-4.<b>B-type (Branch)</b> instructions are used to control program flow. It compares 
+<b>4.B-type (Branch)</b>These instructions are used to control program flow. It compares 
 two operands stored in registers and branch to a destination address relative 
 to the current Program Counter value. </br>
+
 
 | Column 1 | Column 2 | Column 3 | Column 4 | Column 5 | Column 6 | Column 7 |
 |----------|----------|----------|----------|----------|----------|----------|
@@ -151,14 +152,17 @@ to the current Program Counter value. </br>
 | Register  |  imm[12] , imm[10:5]      | rs2     | rs1   | function3     |    imm[4:0] ,imm[11]    |  opcode    |
 
 </br>
-B-format is mostly same as S-Format, with two register sources (rs1/rs2) and a 12-bit immediate</br>
+
+>*B-format is mostly same as S-Format, with two register sources (rs1/rs2) and a 12-bit immediate</br>
 The 12 immediate bits encode even 13-bit signed byte offsets (lowest bit of offset is always zero, so no need to store it</br>
 It checks the condition between Rs1 and Rs2,if condition is true:</br>
 pc=pc+immediate value(incrementing the pc) and jump to next address based on offset value</br>
 if condition is false:</br>
 pc=pc+4(which execute next input)</br>
+
 </br>
-5.<b>J-type (Jump)</b> instructions are used for subroutine calls.</br>
+
+<b>5.J-type (Jump)</b>:These instructions are used for subroutine calls.</br>
 
 | Column 1 | Column 2          | Column 3          | Column 4 | Column 5 |
 |----------|-------------------|-------------------|----------|----------|
@@ -166,25 +170,28 @@ pc=pc+4(which execute next input)</br>
 | U-TYPE    |      imm[20] , imm[10:1] ,imm[11]      |  imm[19:12]            | rd     | Opcode     |
 
 </br>
-The J-type instruction has instruction like JAL.It encodes 20 bits signed immediate</br>
+
+>* The J-type instruction has instruction like JAL.It encodes 20 bits signed immediate</br>
 The address of the desired memory location for jump is defined in the instruction.</br> 
 jal saves PC+4 in register rd (the return address)<br>
  Set PC = PC + offset (PC-relative jump<br>
+ 
 </br>
-6 <b>U-type (Upper immediate)</b> instructions are used to specify the upper 20 bits immediate value of a register</br>
+ <b>6.U-type (Upper immediate)</b>:-These instructions are used to specify the upper 20 bits immediate value of a register</br>
 
 | Column 1 | Column 2             | Column 3 | Column 4 |
 |----------|----------------------|----------|----------|
 |  INST TYPE  | [12:31]                | [7-11 ]    | [0-6]    |
 |  U-TYPE   | imm[12:31]                | rd    | opcode    |
 
-This instruction should deal with:</br>
+>* This instruction should deal with:</br>
 -the immediate of 20 bits</br>
 -the instruction opcode</br>
 -One destination register, rd</br>
  Used for two instructions</br>
  LUI – Load Upper Immediate</br>
 AUIPC – Add Upper Immediate to PC</br>
+
 </br>
 # ANALYSING SOME OF THE INSTRUCTIONS WITH MACHINE CODE
 1. <b>add r6,r2,r1</b></br>
