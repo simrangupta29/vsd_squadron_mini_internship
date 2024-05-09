@@ -388,5 +388,14 @@ To see the output waveform in gtkwave, enter the following commands in the termi
 ```
 $ gtkwave simran_rv32i.vcd
 ```
-![iverilog](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/7bd751a2-abe6-4f66-baf3-d8fd79bb69bf)
+![verilog](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/fcafa177-27f2-44a7-8214-f1004cda8d1b)
+
+<b>Now Let's anaylze wave form of each instruction using gtkwave.
+```
+1. ADD R6,R2,R1
+```
+![WhatsApp Image 2024-05-09 at 15 21 03_58c86c3c](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/e04b571e-05e5-49fa-995a-1eb87491bed7)
+</br>
+>* As it is shown in the waveform the contents of register R1=1  and register R2=2 are added, and the result which is 1+2=3 is stored in register R6.The hard-corded 32bit ISA for this instruction is 32'h02208300.
+
 
