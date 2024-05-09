@@ -332,7 +332,8 @@ $ cat sum1ton.c.
  </br>
 Give command :-
 ```
-$ riscv64-unknown-elf-gcc-o1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c which will generate an output file.
+$ riscv64-unknown-elf-gcc-o1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+```
 >* This command is compiling a C source file named "sum1ton.c" into an object file named "sum1ton.o" using the RISC-V GCC compiler with optimization level 1 (-O1), specifying the Application Binary Interface (ABI) as LP64 (-mabi=lp64), and the target architecture as RV64I (-march=rv64i).
 
 >* **-mabi=ilp32:** _This option specifies the ABI (Application Binary Interface) to use ilp32, which is for a 32-bit integer, long, and pointer size. This ABI is used for 32-bit 
