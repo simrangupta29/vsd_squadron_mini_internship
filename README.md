@@ -350,7 +350,7 @@ It will give a bunch of assembly language code.
 
 >* The command riscv64-unknown-elf-objdump -d sum1ton.o tells the objdump utility, customized for the RISC-V architecture, to disassemble the contents of the sum1ton.o object file and display the resulting assembly language instructions.
 
->* Search for main address in that assembly language code 
+Search for main address in that assembly language code. </br>
 Main address starts from 10184 in hex and ends at 101ec in hex which means it has 27 instructions.
 
 ![vdi_2](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/e7808211-8835-4278-ad84-021ed65b52de)
