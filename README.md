@@ -12,14 +12,14 @@ Mini summer internship under VLSI SYSTEM DESIGN on RISCV-Architecture and about 
 
 This is the RISC-V C and C++ cross-compiler. It supports two build modes: a generic ELF/Newlib toolchain and a more sophisticated Linux-ELF/glibc toolchain.</br>
 These are the commands for installation of Riscv toolchain command:-
-'''
+```
 $ sudo apt-get install autoconf automake autotools-dev curl python3 python3-pip libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake libglib2.0-dev libslirp-dev
 </br>
 $git clone -- recursive https://github.com/riscv/riscv-gnu-toolchain 
 $./configure --prefix=/opt/riscv
 $ make linux
 $ sudo make linux
-'''
+```
 
 ![intern_riscv](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/d3cf31fe-2712-4d0d-ad97-b394c5498b41)
 # YOSYS
