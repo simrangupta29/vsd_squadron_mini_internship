@@ -199,20 +199,20 @@ AUIPC – Add Upper Immediate to PC</br>
 1.ADD R6,R2,R1
 ```
 
-It is R-type instruction.ADD is a typical ALU instruction in the class of 
+<b>It is R-type instruction.ADD is a typical ALU instruction in the class of 
 arithmatic and logic operations. It needs two source operands and one destination operands to store the results.</br>
 rs1=r2=00010,rs2=r1 = 00001</br>
 rd: =r6=r1+r2= 00110</br>
 The operation is specified with the opcode, funct3 and funct7 fields of the instructions.</br> 
 opcode =0110011 funct3 = 000, funct7 = 0000000</br>
 32 bit instruction(funct7 rs2 rs1 fun3 rd opcode )</br>
-0000000 00001 00010 000 00110 0110011</br>
+0000000 00001 00010 000 00110 0110011</b></br>
 
 ```
 2.SUB R7, R1, R2
 ```
 
-It is R-type instruction.SUB is a typical ALU instruction in the class of 
+<b>It is R-type instruction.SUB is a typical ALU instruction in the class of 
 arithmatic and logic operations. It needs two source operands and one destination 
 operands to store the results.</br>
 rs1=r1=00001,rs2=r2 = 00010</br>
@@ -220,12 +220,12 @@ rd: =r7=rs1-rs2= 00111</br>
 The operation is specified with the opcode, funct3 and funct7 fields of the instructions. </br>
 opcode =0110011 funct3 = 000, funct7 =  0100000</br>
 32 bit instruction(funct7 rs2 rs1 fun3 rd opcode )</br>
-0000000 00010 00001 000 00111  0100000</br>
+0000000 00010 00001 000 00111  0100000</b></br>
 
 ```
 3.AND R8, R1, R3
 ```
-This instruction belongs to R-type instruction set.
+<b>This instruction belongs to R-type instruction set.
 r8 will hold the value of r1 & r3, having bitwise and</br>
 rd = r8 = 01000</br>
 rs1 = r1 = 00001</br>
@@ -233,23 +233,23 @@ rs2 = r3 = 00011</br>
 The operation is specified with the opcode, funct3 and funct7 fields of the instructions. </br>
 Opcode for AND = 0110011,func3 = 111,func7 = 0000000</br>
 32 bits instruction :</br>
-0000000 00011 00001 111 01000 0110011</br>
+0000000 00011 00001 111 01000 0110011</b></br>
 
 ```
 4.OR R9,R2,R5
 ```
-It is also an R-type instruction.</br>
+<b>It is also an R-type instruction.</br>
 rd = r9=01001</br>
 rs1 = r2=00010 ,rs2= r5:00101</br> 
 funct3 = 110 ,funct7 = 0000000 ,opcode: 0110011</br>
 The operation is specified with the opcode, funct3 and funct7 fields of the instructions. </br>
 32 bits instruction :</br>
-0000000 00101 00010 110 01001 0110011</br>
+0000000 00101 00010 110 01001 0110011</b></br>
 
 ```
 5. XOR R10, R1, R4
 ```
-It is R-type instruction set.</br>
+<b>It is R-type instruction set.</br>
 XOR operation bit by bit.</br>
 rd = r10 = 01010</br>
 rs1 = r1 = 00001</br>
@@ -257,89 +257,89 @@ rs2 = r4 = 00100</br>
 func3 = 100,func7 = 0000000,Opcode for XOR = 0110011</br>
 The operation is specified with the opcode, funct3 and funct7 fields of the instructions. </br>
 32 bits instruction :</br>
-0000000 00100 00001 100 01010 0110011</br>
+0000000 00100 00001 100 01010 0110011</b></br>
 
 ```
 6.SLT R1, R2, R4
 ```
-It is R-type instruction set.</br>
+<b>It is R-type instruction set.</br>
 rd = r1 = 00001</br>
 rs1 = r2 = 00010</br>
 rs2 = r4 = 00100</br>
 func3 = 010,func7 = 0000000,Opcode for SLT = 0110011</br>
 The operation is specified with the opcode, funct3 and funct7 fields of the instructions. </br>
 32 bits instruction :</br>
-0000000 00100 00010 010 00001 0110011</br>
+0000000 00100 00010 010 00001 0110011</b></br>
 
 ```
 7.ADDI R12, R4, 5
 ```
-It is I-type instruction set.</br>
+<b>It is I-type instruction set.</br>
 rd = r12 =r4+5= 01100</br>
 rs1 = r4 = 00100</br>
 imm[11:0] = 5 = 000000000101</br>
 func3 = 000, Opcode for ADDI = 0010011</br>
 32 bits instruction :</br>
-000000000000101 00100 000 01100 0010011</br>
+000000000000101 00100 000 01100 0010011</b></br>
 
 ```
 8.SW R3, R1, 2
 ```
-It is S-type instruction set.</br>
+<b>It is S-type instruction set.</br>
 r3 is the source register.</br> 
 rs2 = r3 = 00011</br>
 rs1 = r1 = 00001</br>
 imm[11:0] = 2 = 000000000010</br>
 func3 = 010,Opcode for SW = 0100011</br>
 32 bits instruction : </br>
-0000000 00011 00001 010 00010 0100011</br>
+0000000 00011 00001 010 00010 0100011</b></br>
 
 ```
 9.SRL r16, r14, r2
 ```
-SRL stands for Logical Shift Right.It is S-type instruction set.</br>
+<b>SRL stands for Logical Shift Right.It is S-type instruction set.</br>
 r16 is the destination register</br>
 rd = r16 = 10000</br>
 rs1 = r14 = 01110</br>
 rs2 = r2 = 00010</br>
 func3 = 101,func7 = 0000000,Opcode for SRL = 0110011</br>
-32 bits instruction : 0000000 00010 01110 101 10000 0110011</br>
+32 bits instruction : 0000000 00010 01110 101 10000 0110011</b></br>
 
 ```
 10.BNE R0, R1, 20
 ```
-BNE is a B-type instruction . In BNE, the value stored in r0 !=  the value stored in r1.</br>
+<b>BNE is a B-type instruction . In BNE, the value stored in r0 !=  the value stored in r1.</br>
 If the condition is true, PC = PC + 20, elsePC= PC + 4 </br>
 rs1 = r0 = 00000</br>
 rs2 = r1 = 00001</br>
 imm[12:1] = 20 = 000000010100</br>
 func3 = 001,Opcode for BNE = 1100011</br>
 32 bits instruction :</br>
-0 000001 00001 00000 001 0100 0 1100011</br>
+0 000001 00001 00000 001 0100 0 1100011</b></br>
 
 ```
 11.BEQ R0, R0, 15
 ```
-BEQ is a B-type instruction. In BEQ,the value stored in r0 == the value stored in r0. </br>
+<b>BEQ is a B-type instruction. In BEQ,the value stored in r0 == the value stored in r0. </br>
 If the condition is true, PC= PC + 15, else PC=PC+4</br>
 rs1 = r0 = 00000</br>
 rs2 = r0 = 00000</br>
 Imm[12:1] = 000000001111</br>
 func3 = 000,Opcode for BEQ = 1100011</br>
 32 bits instruction :</br>
-0 000000 00000 00000 000 1111 0 1100011</br>
+0 000000 00000 00000 000 1111 0 1100011</b></br>
 
 ```
 12.LW r13,r1,2
 ```
-It is I-type instruction set.</br>
+<b>It is I-type instruction set.</br>
 The "lw" (load word) instruction is used to load a word from memory into a register. </br>
 rd =r13=01101</br>
 rs1 = r1=00001</br>
 imm[11:0]= 2 =000000000010 </br>
 funct3 = 010, opcode for lw= 0000011 </br>
 32 bit instruction:</br>
-000000000010 00001  010 01101  0000011 
+000000000010 00001  010 01101  0000011 </b>
 </br>
 
 # TASK-3
