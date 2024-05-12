@@ -6,6 +6,7 @@ This system will also give the indication of motion detected by blinking the led
 
 </br>
 <b>COMPONENTS REQUIRED</b>
+
 <ul>VSD SQUADRON MINI BOARD</ul>
 <ul>IR SENSOR</ul>
 <ul>LEDS</ul>
@@ -27,6 +28,7 @@ The LED lights up, providing illumination and the led will blink 3 times in the 
 
 </br>
 <b> C CODE </b>
+
 ```
 //These include the necessary header files (ch32v00x.h and debug.h) for the CH32V microcontroller and debugging purposes.
 #include <ch32v00x.h>
