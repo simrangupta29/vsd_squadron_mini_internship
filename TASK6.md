@@ -18,10 +18,10 @@ This system will also give the indication of motion detected by blinking the led
 <b>PIN DIAGRAM</b>
 | IR SENSOR,LED   | VSD SQUADRON BOARD |
 | --------------- | --------------- |
-| Row 1, Column 1 | Row 1, Column 2 |
-| Row 2, Column 1 | Row 2, Column 2 |
-| Row 3, Column 1 | Row 3, Column 2 |
-| Row 4, Column 1 | Row 4, Column 2 |
+| VCC OF IR | 3.2V |
+| GND OF IR| GND |
+| OUT OF IR | PIN 4 |
+| LED | PIN 6 |
 
 </br>
 <b> WORKING </b>
@@ -90,7 +90,7 @@ Delay_Ms(100);}
 }
 ```
 
-<APPLICATIONS>
+<b>APPLICATIONS</b>
 <UL><b>Security Lighting:</b>These systems can be used for security lighting in outdoor spaces, such as gardens, driveways, and pathways, to deter intruders and provide visibility at night.</UL>
 <ul><b>Home Automation:</b>Automatic light systems can be installed in homes, particularly in areas such as hallways, staircases, and bathrooms, where lights need to be turned on/off based on occupancy.</ul>
 <ul><b>Energy Efficiency:</b>
