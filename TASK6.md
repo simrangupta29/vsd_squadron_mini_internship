@@ -3,6 +3,8 @@
 # AUTOMATIC LIGHT SYSTEM
 An automatic light system is a setup designed to automatically control the lighting based on the presence or absence of individuals within its detection range.
 This system will also give the indication of motion detected by blinking the led 3 times.
+
+</br>
 </br>
 <b>COMPONENTS REQUIRED</b>
 <ul>VSD SQUADRON MINI BOARD</ul>
@@ -12,6 +14,7 @@ This system will also give the indication of motion detected by blinking the led
 <ul>USB CABLE</ul>
 <ul>JUMPER WIRES</ul>
 </br>
+
 <b> WORKING </b>
 <ul>The IR sensor is strategically placed in a location where it can detect the movement of individuals within its sensing range.
 </ul>
