@@ -96,3 +96,11 @@ Delay_Ms(100);}
 <ul><b>Energy Efficiency:</b>
 Automatic light systems contribute to energy conservation by ensuring that lights are not left on unnecessarily when the area is unoccupied.</ul>
 <ul><b>Accessibility:</b>These systems can improve accessibility for individuals with disabilities by providing automatic illumination in response to their movement.</ul>
+
+</br>
+<b>DEMONSTRATION OF PROJECT</b>
+
+
+https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/b6022d54-e2d0-4c81-91ac-ec7a3a7abbd9
+
+
