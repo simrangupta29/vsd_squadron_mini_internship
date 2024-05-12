@@ -20,6 +20,6 @@ This system will also give the indication of motion detected by blinking the led
 <ul>When the IR sensor detects motion, it sends a signal to the microcontroller which then activates the LED lighting system.
 The LED lights up, providing illumination and the led will blink 3 times in the area where motion is detected which gives indication of motion detected. </ul>
 </br>
-</br>
+
 ![images_gen](https://github.com/simrangupta29/vsd_squadron_mini_internship/assets/130252328/789ea1b1-b392-40c5-9e63-1956c918358f)
 
