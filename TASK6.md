@@ -6,7 +6,7 @@ This system will also give the indication of motion detected by blinking the led
 
 </br>
 <b>COMPONENTS REQUIRED</b>
-
+</br>
 <ul>VSD SQUADRON MINI BOARD</ul>
 <ul>IR SENSOR</ul>
 <ul>LEDS</ul>
@@ -15,6 +15,15 @@ This system will also give the indication of motion detected by blinking the led
 <ul>JUMPER WIRES</ul>
 </br>
 
+<b>PIN DIAGRAM</b>
+| IR SENSOR,LED   | VSD SQUADRON BOARD |
+| --------------- | --------------- |
+| Row 1, Column 1 | Row 1, Column 2 |
+| Row 2, Column 1 | Row 2, Column 2 |
+| Row 3, Column 1 | Row 3, Column 2 |
+| Row 4, Column 1 | Row 4, Column 2 |
+
+</br>
 <b> WORKING </b>
 <ul>The IR sensor is strategically placed in a location where it can detect the movement of individuals within its sensing range.
 </ul>
@@ -80,3 +89,10 @@ Delay_Ms(100);}
 }
 }
 ```
+
+<APPLICATIONS>
+<UL><b>Security Lighting:</b>These systems can be used for security lighting in outdoor spaces, such as gardens, driveways, and pathways, to deter intruders and provide visibility at night.</UL>
+<ul><b>Home Automation:</b>Automatic light systems can be installed in homes, particularly in areas such as hallways, staircases, and bathrooms, where lights need to be turned on/off based on occupancy.</ul>
+<ul><b>Energy Efficiency:</b>
+Automatic light systems contribute to energy conservation by ensuring that lights are not left on unnecessarily when the area is unoccupied.</ul>
+<ul><b>Accessibility:</b>These systems can improve accessibility for individuals with disabilities by providing automatic illumination in response to their movement.</ul>
