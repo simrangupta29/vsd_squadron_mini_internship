@@ -115,5 +115,5 @@ During the VSD Squadron mini Internship, I embarked on a journey exploring vario
 
 <b>Spike and Proxy Kernel: </b>I explored the Spike simulator and Proxy Kernel, understanding their roles in simulating RISC-V programs and debugging them effectively.
 
-<b>Mini Project :</b> Automatic Light System: As part of your project work, I implemented an automatic light system using the VSD Squadron mini board,</br> IR sensor, and LEDs. You wrote C code to control the system, detecting motion with the IR sensor and indicating it through LED illumination.
+<b>Mini Project :</b> Automatic Light System: As part of my project work, I implemented an automatic light system using the VSD Squadron mini board,</br> IR sensor, and LEDs, wrote C code to control the system, detecting motion with the IR sensor and indicating it through LED illumination.
 
