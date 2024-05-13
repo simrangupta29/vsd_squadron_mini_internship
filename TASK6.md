@@ -111,7 +111,7 @@ During the VSD Squadron mini Internship, I embarked on a journey exploring vario
 
 <b>Understanding RISC-V Architecture: </b>I delved into the fundamentals of the RISC-V architecture, learning about its open, versatile instruction set, instruction formats, operand types, and various instruction types and their opcodes.</br>
 
-<b>Lab-Based Tasks:</b Engaging in lab-based tasks, I wrote and compiled C programs, simulated them using RISC-V GCC compiler and Spike, and analyzed the assembly code. You also performed functional simulation experiments using Verilog netlists and testbenches, utilizing Icarus Verilog and GTKWave.</br>
+<b>Lab-Based Tasks:</b> Engaging in lab-based tasks, I wrote and compiled C programs, simulated them using RISC-V GCC compiler and Spike, and analyzed the assembly code. You also performed functional simulation experiments using Verilog netlists and testbenches, utilizing Icarus Verilog and GTKWave.</br>
 
 <b>Spike and Proxy Kernel: </b>I explored the Spike simulator and Proxy Kernel, understanding their roles in simulating RISC-V programs and debugging them effectively.
 
